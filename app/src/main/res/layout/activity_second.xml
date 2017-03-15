@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/second"
     android:orientation="vertical"
-    tools:context="com.example.administrator.muyilife.Second">
+    tools:context="com.example.administrator.muyilife.Fragment.Second">
     <LinearLayout
         android:padding="10dp"
         android:orientation="horizontal"

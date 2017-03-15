@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.muyilife.Map">
+<LinearLayout
+    android:layout_weight="2"
+    android:background="#bfc1c2"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:textSize="15dp"
+        android:text="返回"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="位置信息"/>
+</LinearLayout>
+<com.baidu.mapapi.map.MapView
+    android:clickable="true"
+    android:id="@+id/flmap"
+    android:layout_weight="0.5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.9"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+    <TextView
+            android:layout_weight="2"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="北京木易生活"/>
+            <TableLayout
+                android:padding="2dp"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1"
+                android:shrinkColumns="1">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="北京市海淀区复兴路51号国悦府(联系电话：010—68151200"/>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="asdasdd" />
+    </LinearLayout>
+</LinearLayout>

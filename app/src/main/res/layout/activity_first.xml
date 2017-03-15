@@ -6,8 +6,29 @@
     android:id="@+id/first"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/main"
-    tools:context="com.example.administrator.muyilife.First">
+    tools:context="com.example.administrator.muyilife.Fragment.First">
+
+    <GridLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/main_top">
+
+        <ImageView
+            android:id="@+id/iVlogo"
+            android:layout_width="96dp"
+            android:layout_height="94dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/main_srcode" />
+
+    </GridLayout>
 
 
+    <ImageView
+        android:id="@+id/iVmap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.25"
+        android:background="@drawable/main_btm" />
 </LinearLayout>

@@ -2,12 +2,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.muyilife">
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="WDwFrAaqVKYmGPrFGesho0WOKE5vbw2v" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,14 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".First" />
-        <activity android:name=".Second" />
-        <activity android:name=".Third" />
-        <activity android:name=".Fourth" />
+        <activity android:name=".Fragment.First" />
+        <activity android:name=".Fragment.Second" />
+        <activity android:name=".Fragment.Third" />
+        <activity android:name=".Fragment.Fourth" />
         <activity android:name=".Mu" />
         <activity android:name=".Xiang" />
         <activity android:name=".Xiu" />
-        <activity android:name=".Life"></activity>
+        <activity android:name=".Life" />
+        <activity android:name=".Map" />
+        <activity android:name=".Fragment.Map_fragment" />
+        <activity android:name=".Logo"></activity>
     </application>
 
 </manifest>

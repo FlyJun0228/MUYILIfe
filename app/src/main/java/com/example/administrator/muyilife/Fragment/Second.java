@@ -1,4 +1,4 @@
-package com.example.administrator.muyilife;
+package com.example.administrator.muyilife.Fragment;
 
 
 import android.content.Intent;
@@ -9,6 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.example.administrator.muyilife.Life;
+import com.example.administrator.muyilife.Mu;
+import com.example.administrator.muyilife.R;
+import com.example.administrator.muyilife.Xiang;
+import com.example.administrator.muyilife.Xiu;
+
 public class Second extends Fragment implements View.OnClickListener {
 
     private ImageView mIVmu;
@@ -16,8 +22,8 @@ public class Second extends Fragment implements View.OnClickListener {
     private ImageView mIVxiu;
     private ImageView mIvlife;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup cotainer, Bundle savedInstanceState){
-            View view = inflater.inflate(R.layout.activity_second,cotainer,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+            View view = inflater.inflate(R.layout.activity_second,container,false);
             initView(view);
             initListener();
             return view;

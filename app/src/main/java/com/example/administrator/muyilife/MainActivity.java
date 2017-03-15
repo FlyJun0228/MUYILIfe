@@ -9,6 +9,11 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.example.administrator.muyilife.Fragment.First;
+import com.example.administrator.muyilife.Fragment.Fourth;
+import com.example.administrator.muyilife.Fragment.Second;
+import com.example.administrator.muyilife.Fragment.Third;
+
 public class MainActivity extends FragmentActivity {
     private FragmentTabHost mTabHost;
 
