@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fourth"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fourth"
     android:orientation="vertical"
     tools:context="com.example.administrator.muyilife.Fragment.Fourth">
+
     <TextView
-        android:background="#f5e006"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="4"/>
+        android:background="#f5e006"
+        android:text="4" />
 </LinearLayout>

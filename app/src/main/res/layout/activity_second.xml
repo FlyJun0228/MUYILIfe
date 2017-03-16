@@ -2,61 +2,67 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/second"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/second"
     android:orientation="vertical"
     tools:context="com.example.administrator.muyilife.Fragment.Second">
+
     <LinearLayout
-        android:padding="10dp"
-        android:orientation="horizontal"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/logo_muyi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/logo_muyi" />
+
         <FrameLayout
-            android:layout_weight="0.5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
 
         </FrameLayout>
 
     </LinearLayout>
-<LinearLayout
-    android:id="@+id/linear"
-    android:layout_weight="0.13"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/mu"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/mu_banner"/>
 
-    <ImageView
-        android:id="@+id/xiang"
+    <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/xiang_banner" />
+        android:layout_weight="0.13"
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/xiu"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/xiu_banner"/>
-<ImageView
-    android:id="@+id/life"
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/life_banner"/>
-</LinearLayout>
+        <ImageView
+            android:id="@+id/mu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/mu_banner" />
+
+        <ImageView
+            android:id="@+id/xiang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/xiang_banner" />
+
+        <ImageView
+            android:id="@+id/xiu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/xiu_banner" />
+
+        <ImageView
+            android:id="@+id/life"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/life_banner" />
+    </LinearLayout>
 </LinearLayout>

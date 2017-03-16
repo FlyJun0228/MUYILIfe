@@ -1,6 +1,5 @@
 package com.example.administrator.muyilife.Fragment;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,7 +20,6 @@ public class Second extends Fragment implements View.OnClickListener {
     private ImageView mIVxiang;
     private ImageView mIVxiu;
     private ImageView mIvlife;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -47,22 +45,21 @@ public class Second extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.mu:
-                Intent intent = new Intent(getActivity().getApplicationContext(), Mu.class);
+                Intent intent = new Intent(getActivity(), Mu.class);
                 startActivity(intent);
                 break;
             case R.id.xiang:
-                Intent intent1 = new Intent(getActivity().getApplicationContext(), Xiang.class);
+                Intent intent1 = new Intent(getActivity(), Xiang.class);
                 startActivity(intent1);
                 break;
             case R.id.xiu:
-                Intent intent2 = new Intent(getActivity().getApplicationContext(), Xiu.class);
+                Intent intent2 = new Intent(getActivity(), Xiu.class);
                 startActivity(intent2);
                 break;
             case R.id.life:
-                Intent intent3 = new Intent(getActivity().getApplicationContext(), Life.class);
+                Intent intent3 = new Intent(getActivity(), Life.class);
                 startActivity(intent3);
                 break;
         }
