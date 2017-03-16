@@ -21,16 +21,17 @@ public class MainActivity extends FragmentActivity {
     private LayoutInflater layoutInflater;
 
     //定义数组来存放Fragment界面
-    private Class fragmentArray[] = {First.class,Second.class,Third.class,Fourth.class};
+    private Class fragmentArray[] = {First.class, Second.class, Third.class, Fourth.class};
 
     //定义数组来存放按钮图片
-    private int mImageViewArray[] = {R.drawable.housee,R.drawable.starr,R.drawable.ringg,
+    private int mImageViewArray[] = {R.drawable.housee, R.drawable.starr, R.drawable.ringg,
             R.drawable.vipp};
-    private int mImageView[] = {R.drawable.btn_sure,R.drawable.btn_sure2,R.drawable.btn_sure3,
+    private int mImageView[] = {R.drawable.btn_sure, R.drawable.btn_sure2, R.drawable.btn_sure3,
             R.drawable.btn_sure4};
 
     //Tab选项卡的文字
     private String mTextviewArray[] = {"首页", "木易精品", "最新动态", "我的vip"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,43 +50,44 @@ public class MainActivity extends FragmentActivity {
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("标签页3").setContent(R.id.third));
         tabHost.addTab(tabHost.newTabSpec("tab4").setIndicator("标签页4").setContent(R.id.fourth));*/
     }
-    public void initView(){
-         layoutInflater = LayoutInflater.from(this);//实例化布局对象
+
+    public void initView() {
+        layoutInflater = LayoutInflater.from(this);//实例化布局对象
         //实例化TanHost对象，得到Tabhost
-        mTabHost = (FragmentTabHost)findViewById(android.R.id.tabhost);
-        mTabHost.setup(this,getSupportFragmentManager(),R.id.realtabcontent);
+        mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
+        mTabHost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
         //得到fragment的个数
         int count = fragmentArray.length;
 
-        for(int i = 0; i < count; i++){
+        for (int i = 0; i < count; i++) {
             //为每一个Tab按钮设置图标、文字和内容
             TabHost.TabSpec tabSpec = mTabHost.newTabSpec(mTextviewArray[i]).setIndicator(getTabItemView(i));
             //将Tab按钮添加进Tab选项卡中
             mTabHost.addTab(tabSpec, fragmentArray[i], null);
             //设置Tab按钮的背景
-            mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
+            mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 
                 @Override
-                public void onTabChanged(String tabId){
+                public void onTabChanged(String tabId) {
 
-                    if (mTabHost.getCurrentTabTag()==tabId){
-                    for (int l = 0;l<4;l++){
-                            ((TextView)mTabHost.getTabWidget().getChildTabViewAt(l).findViewById(R.id.text)).setTextColor(getResources().getColor(R.color.colorBlack));
-                        ((ImageView)mTabHost.getTabWidget().getChildTabViewAt(l).findViewById(R.id.image)).setImageResource(mImageView[l]);
-                    }
-                        ((TextView)mTabHost.getCurrentTabView().findViewById(R.id.text)).setTextColor(getResources().getColor(R.color.colorSelect));
+                    if (mTabHost.getCurrentTabTag() == tabId) {
+                        for (int l = 0; l < 4; l++) {
+                            ((TextView) mTabHost.getTabWidget().getChildTabViewAt(l).findViewById(R.id.text)).setTextColor(getResources().getColor(R.color.colorBlack));
+                            ((ImageView) mTabHost.getTabWidget().getChildTabViewAt(l).findViewById(R.id.image)).setImageResource(mImageView[l]);
+                        }
+                        ((TextView) mTabHost.getCurrentTabView().findViewById(R.id.text)).setTextColor(getResources().getColor(R.color.colorSelect));
 
                     }
                 }
             });
-            ((TextView)mTabHost.getCurrentTabView().findViewById(R.id.text)).setTextColor(getResources().getColor(R.color.colorSelect));
+            ((TextView) mTabHost.getCurrentTabView().findViewById(R.id.text)).setTextColor(getResources().getColor(R.color.colorSelect));
         }
     }
 
     /**
      * 给Tab按钮设置图标和文字
      */
-    private View getTabItemView(int index){
+    private View getTabItemView(int index) {
         View view = layoutInflater.inflate(R.layout.tab_view, null);
 
         ImageView imageView = (ImageView) view.findViewById(R.id.image);

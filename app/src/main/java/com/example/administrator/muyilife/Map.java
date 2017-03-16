@@ -38,19 +38,21 @@ public class Map extends Activity {
         baidumap.animateMapStatus(update);
     }
 
-@Override
-    protected void onDestroy(){
-    super.onDestroy();
-    mapView.onDestroy();
-}
-@Override
-    protected void onPause(){
-    super.onPause();
-    mapView.onPause();
-}
-@Override
-    protected void onResume(){
-    super.onResume();
-    mapView.onResume();
-}
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
 }
