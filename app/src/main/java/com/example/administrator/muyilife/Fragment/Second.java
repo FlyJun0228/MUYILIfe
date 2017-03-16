@@ -3,6 +3,7 @@ package com.example.administrator.muyilife.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,11 +23,11 @@ public class Second extends Fragment implements View.OnClickListener {
     private ImageView mIVxiu;
     private ImageView mIvlife;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-            View view = inflater.inflate(R.layout.activity_second,container,false);
-            initView(view);
-            initListener();
-            return view;
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_second,container,false);
+        initView(view);
+        initListener();
+        return view;
     }
     public void initView(View view){
         mIVmu = (ImageView)view.findViewById(R.id.mu);
