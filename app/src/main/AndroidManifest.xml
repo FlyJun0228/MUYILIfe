@@ -22,6 +22,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -34,17 +35,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Fragment.First" />
-        <activity android:name=".Fragment.Second" />
-        <activity android:name=".Fragment.Third" />
-        <activity android:name=".Fragment.Fourth" />
         <activity android:name=".Mu" />
         <activity android:name=".Xiang" />
         <activity android:name=".Xiu" />
         <activity android:name=".Life" />
         <activity android:name=".Map" />
-        <activity android:name=".Fragment.Map_fragment" />
-        <activity android:name=".Logo"></activity>
+        <activity android:name=".Logo"/>
     </application>
 
 </manifest>
