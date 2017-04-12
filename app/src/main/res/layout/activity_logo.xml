@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.muyilife.Logo">
+    tools:context=".Logo.Logo">
 
     <FrameLayout
         android:layout_width="match_parent"

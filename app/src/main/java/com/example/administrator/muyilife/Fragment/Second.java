@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.administrator.muyilife.Life;
-import com.example.administrator.muyilife.Mu;
+import com.example.administrator.muyilife.Jingpin.Life;
+import com.example.administrator.muyilife.Jingpin.Mu;
 import com.example.administrator.muyilife.R;
-import com.example.administrator.muyilife.Xiang;
-import com.example.administrator.muyilife.Xiu;
+import com.example.administrator.muyilife.Jingpin.Xiang;
+import com.example.administrator.muyilife.Jingpin.Xiu;
 
 public class Second extends Fragment implements View.OnClickListener {
 

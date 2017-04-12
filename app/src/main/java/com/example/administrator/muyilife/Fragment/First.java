@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.administrator.muyilife.Logo;
+import com.example.administrator.muyilife.Logo.Logo;
 import com.example.administrator.muyilife.Map;
 import com.example.administrator.muyilife.R;
 

@@ -1,13 +1,15 @@
-package com.example.administrator.muyilife;
+package com.example.administrator.muyilife.Logo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Mu extends AppCompatActivity {
+import com.example.administrator.muyilife.R;
+
+public class Logo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mu);
+        setContentView(R.layout.activity_logo);
     }
 }

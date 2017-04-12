@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context="com.example.administrator.muyilife.Mu">
+    tools:context=".Jingpin.Mu">
 
     <LinearLayout
         android:orientation="vertical"
@@ -49,7 +49,7 @@
                 android:layout_height="match_parent" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_mu"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="1"
