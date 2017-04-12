@@ -22,30 +22,26 @@ import java.net.URL;
 
 public class Ceshi extends AppCompatActivity {
 
-    public String News1, News2, News3, News4, News5, News6;
-    String urll = "https://www.muyilife2016.com/news";
+    private String news, news1, news2, news3, news4, news5, news6;
+    private String urll = "https://www.muyilife2016.com/news";
     private ImageView imageView, imageView1;
-    javabean javabea;
+    private javabean javabea;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ceshi);
         imageView = (ImageView) findViewById(R.id.iv_mu);
         imageView1 = (ImageView) findViewById(R.id.iv_mu1);
         Connection();
-       new Image().ShowImage(imageView,News1);
-        Log.e("sdasd",News1);
-
-}
+        new Image().ShowImage(imageView, news1);
+    }
 
 
     public String Connection() {
         new Thread() {
             public void run() {
                 try {
-
                     URL url = new URL(urll);
                     final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
@@ -85,27 +81,28 @@ public class Ceshi extends AppCompatActivity {
                 }
             }
         }.start();
-return null;
+        return null;
     }
- public void Json(String jsondata) {
-     try {
-         JSONArray jsonArray = new JSONArray(jsondata);
-         for (int i = 0; i < jsonArray.length(); i++) {
-             JSONObject jsonObject = jsonArray.getJSONObject(i);
-             String news = jsonObject.getString("news");
-             String news1 = jsonObject.getString("news1");
-             String news2 = jsonObject.getString("news2");
-             String news3 = jsonObject.getString("news3");
-             String news4 = jsonObject.getString("news4");
-             String news5 = jsonObject.getString("news5");
-             String news6 = jsonObject.getString("news5");
-            News1 = news1;
-         }
 
-     } catch (Exception e) {
-         e.printStackTrace();
-     }
- }
+    public void Json(String jsondata) {
+        try {
+            JSONArray jsonArray = new JSONArray(jsondata);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                news = jsonObject.getString("news");
+                news1 = jsonObject.getString("news1");
+                news2 = jsonObject.getString("news2");
+                news3 = jsonObject.getString("news3");
+                news4 = jsonObject.getString("news4");
+                news5 = jsonObject.getString("news5");
+                news6 = jsonObject.getString("news5");
+                Log.e("111", news1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public Bitmap getImage(String url) {
