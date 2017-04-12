@@ -1,8 +1,8 @@
 package com.example.administrator.muyilife;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ImageView;
@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,14 +18,15 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Ceshi extends AppCompatActivity {
-
-    private String news, news1, news2, news3, news4, news5, news6;
+    public  String news, news1, news2, news3, news4, news5, news6;
     private String urll = "https://www.muyilife2016.com/news";
     private ImageView imageView, imageView1;
-    private javabean javabea;
-
+    private static final int SHOW =0;
+    private Handler handler;
+    Bundle bundle = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +34,17 @@ public class Ceshi extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.iv_mu);
         imageView1 = (ImageView) findViewById(R.id.iv_mu1);
         Connection();
-        new Image().ShowImage(imageView, news1);
+
+        handler =new Handler(){
+            public void handleMessage(Message msg){
+                final ArrayList<String> list = msg.getData().getStringArrayList("new");
+                        new Image().ShowImage(imageView,list.get(0));
+                new Image().ShowImage(imageView1,list.get(1));
+
+            }
+        };
     }
-
-
-    public String Connection() {
+    public void Connection() {
         new Thread() {
             public void run() {
                 try {
@@ -55,11 +61,16 @@ public class Ceshi extends AppCompatActivity {
                     Json(respone.toString());
 
 
-                 /* Json(respone.toString());
-                    bitmap = getImage(News1);
-                    Message message = Message.obtain();
-                    message.what = SHOW;
-                    message.obj = bitmap;
+                 // Json(respone.toString());
+                    ArrayList<String> ne = new ArrayList<String>();
+                    ne.add(news1);
+                    ne.add(news3);
+                    ne.add(news4);
+                    ne.add(news5);
+                    Message message = new Message();
+                   bundle = new Bundle();
+                    bundle.putStringArrayList("new",ne);
+                    message.setData(bundle);
                     handler.sendMessage(message);
                     /* runOnUiThread(new Runnable() {
                             @Override
@@ -81,9 +92,7 @@ public class Ceshi extends AppCompatActivity {
                 }
             }
         }.start();
-        return null;
     }
-
     public void Json(String jsondata) {
         try {
             JSONArray jsonArray = new JSONArray(jsondata);
@@ -96,27 +105,10 @@ public class Ceshi extends AppCompatActivity {
                 news4 = jsonObject.getString("news4");
                 news5 = jsonObject.getString("news5");
                 news6 = jsonObject.getString("news5");
-                Log.e("111", news1);
+                Log.e("asdasd",news);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-
-    public Bitmap getImage(String url) {
-        try {
-
-            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-            connection.setRequestMethod("GET");
-            InputStream is = new BufferedInputStream(connection.getInputStream());
-            Bitmap bitmap = BitmapFactory.decodeStream(is);
-            return bitmap;
-        } catch (java.io.IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
 }

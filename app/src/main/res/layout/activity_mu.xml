@@ -76,7 +76,7 @@
             android:background="@drawable/mu" />
 
         <TextView
-            android:text="crollView用于设置垂直滚动条，HorizontalScrollView用于设置水平滚动条：需要注意的是，有一个属性是    scrollbars 可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
+            android:text="可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
 
 实践部分"
             android:layout_width="match_parent"

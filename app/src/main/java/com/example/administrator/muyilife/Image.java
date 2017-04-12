@@ -50,7 +50,7 @@ public class Image {
                     connection.setRequestMethod("GET");
                     InputStream is = new BufferedInputStream(connection.getInputStream());
                     Bitmap bitmap = BitmapFactory.decodeStream(is);
-                   return bitmap;
+                    return bitmap;
                 } catch (java.io.IOException e) {
                     e.printStackTrace();
                 }
