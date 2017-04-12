@@ -20,6 +20,7 @@ public class First extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.activity_first, container, false);
         initView(view);
         initListener();
@@ -40,11 +41,11 @@ public class First extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iVmap:
-                Intent intent = new Intent(getActivity().getApplicationContext(), Map.class);
+                Intent intent = new Intent(getActivity(), Map.class);
                 startActivity(intent);
                 break;
             case R.id.iVlogo:
-                Intent intent1 = new Intent(getActivity().getApplicationContext(), Logo.class);
+                Intent intent1 = new Intent(getActivity(), Logo.class);
                 startActivity(intent1);
                 break;
         }
