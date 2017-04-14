@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.example.administrator.muyilife.Map">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
@@ -15,17 +15,22 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="返回"
-            android:textSize="15dp" />
+            android:id="@+id/back"
+            android:background="@drawable/fanhui"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+  />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:background="#fafafa"
+            android:textColor="#131313"
+            android:textStyle="normal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:text="位置信息"
             android:textSize="20dp" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <com.baidu.mapapi.map.MapView
         android:id="@+id/flmap"
@@ -50,6 +55,9 @@
             android:orientation="vertical">
 
             <TextView
+                android:gravity="center"
+                android:textColor="#0e0e0e"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -65,9 +73,11 @@
                 android:stretchColumns="1">
 
                 <TextView
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:textColor="#0e0e0e"
                     android:text="北京市海淀区复兴路51号国悦府(联系电话：010—68151200"
                     android:textSize="16dp" />
             </TableLayout>

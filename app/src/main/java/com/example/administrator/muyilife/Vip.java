@@ -4,8 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,35 +19,38 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class Ceshi extends AppCompatActivity {
-    public  String news, news1, news2, news3, news4, news5, news6;
-    private String urll = "https://www.muyilife2016.com/news";
-    private ImageView imageView, imageView1;
-    private static final int SHOW =0;
-    private Handler handler;
+public class Vip extends AppCompatActivity {
+
+    Handler handler = null;
+    String wechat,number,name,jifen,Inten;
+    String url = "https://www.muyilife2016.com/wechat";
     Bundle bundle = null;
+    private TextView textView,textView1,textView2,textView3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ceshi);
-        imageView = (ImageView) findViewById(R.id.iv_mu);
-        imageView1 = (ImageView) findViewById(R.id.iv_mu1);
-        Connection();
-
+        setContentView(R.layout.activity_vip);
+        Inten = this.getIntent().getStringExtra("wechat");
+        initView();
+        Connection(url,"wechat");
         handler =new Handler(){
             public void handleMessage(Message msg){
-                final ArrayList<String> list = msg.getData().getStringArrayList("new");
-                        new Image().ShowImage(imageView,list.get(0));
-                new Image().ShowImage(imageView1,list.get(1));
+                    final ArrayList<String> list = msg.getData().getStringArrayList("new");
+
+                    textView.setText(list.get(0));
+                    textView1.setText(list.get(1));
+                    textView2.setText(list.get(2));
+                    textView3.setText(list.get(3));
 
             }
         };
     }
-    public void Connection() {
+    public void Connection(final String url,final String param) {
         new Thread() {
             public void run() {
                 try {
-                    URL url = new URL(urll);
+                    String urlNameString = url +"?"+param+"="+ Inten;
+                    URL url = new URL(urlNameString);
                     final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
                     InputStream inputstream = connection.getInputStream();
@@ -59,20 +61,17 @@ public class Ceshi extends AppCompatActivity {
                         respone.append(line);
                     }
                     Json(respone.toString());
-
-
-                 // Json(respone.toString());
                     ArrayList<String> ne = new ArrayList<String>();
-                    ne.add(news1);
-                    ne.add(news3);
-                    ne.add(news4);
-                    ne.add(news5);
+                    ne.add(name);
+                    ne.add(wechat);
+                    ne.add(jifen);
+                    ne.add(number);
                     Message message = new Message();
-                   bundle = new Bundle();
+                    bundle = new Bundle();
                     bundle.putStringArrayList("new",ne);
                     message.setData(bundle);
                     handler.sendMessage(message);
-                    /* runOnUiThread(new Runnable() {
+                       /* runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 try {
@@ -82,7 +81,6 @@ public class Ceshi extends AppCompatActivity {
                                 }
                             }
                         });*/
-
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (ProtocolException e) {
@@ -92,23 +90,26 @@ public class Ceshi extends AppCompatActivity {
                 }
             }
         }.start();
+
     }
     public void Json(String jsondata) {
         try {
             JSONArray jsonArray = new JSONArray(jsondata);
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                news = jsonObject.getString("news");
-                news1 = jsonObject.getString("news1");
-                news2 = jsonObject.getString("news2");
-                news3 = jsonObject.getString("news3");
-                news4 = jsonObject.getString("news4");
-                news5 = jsonObject.getString("news5");
-                news6 = jsonObject.getString("news5");
-                Log.e("asdasd",news);
+                name = jsonObject.getString("name");
+                number = jsonObject.getString("number");
+                jifen = jsonObject.getString("jifen");
+                wechat = jsonObject.getString("weichat");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+public void initView(){
+    textView = (TextView)findViewById(R.id.tv_name);
+    textView1 = (TextView)findViewById(R.id.tv_wechat);
+    textView2 = (TextView)findViewById(R.id.tv_grade);
+    textView3 = (TextView)findViewById(R.id.number);
+}
 }

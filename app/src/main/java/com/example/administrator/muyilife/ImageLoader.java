@@ -28,7 +28,7 @@ public class ImageLoader {
 			public void run() {
 				super.run();
 		        Bitmap bitmap = getImage(url);
-				Message message = Message.obtain();
+	Message message = Message.obtain();
 				message.obj = bitmap;
 				handler.sendMessage(message);
 			}

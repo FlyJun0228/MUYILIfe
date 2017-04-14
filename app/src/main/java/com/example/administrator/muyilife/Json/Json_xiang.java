@@ -3,11 +3,10 @@ package com.example.administrator.muyilife.Json;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ListView;
 
-import com.example.administrator.muyilife.Myadapter;
 import com.example.administrator.muyilife.ItemBean;
+import com.example.administrator.muyilife.Myadapter;
 import com.example.administrator.muyilife.R;
 
 import org.json.JSONArray;
@@ -110,7 +109,6 @@ public class Json_xiang extends AppCompatActivity {
                 String   name = jsonObject.getString("name");
                 String  img = "http://www.muyilife2016.com/"+jsonObject.getString("img");
                // String img = img1.replaceAll(" ", "");
-                Log.e("asdasd",img);
                 itemBean = new ItemBean(img, name);
                 itemBeanList.add(itemBean);
             }

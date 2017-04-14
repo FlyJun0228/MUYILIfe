@@ -60,12 +60,12 @@
         </LinearLayout>
 
         <TextView
-            android:padding="5dp"
-            android:text="crollView用于设置垂直滚动条，HorizontalScrollView用于设置水平滚动条：需要注意的是，有一个属性是    scrollbars 可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
-
-实践部分"
+            android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="木工艺品是一项传统的手工艺术品。中国的木艺术可追溯到原始社会时期，那时就有了不少初具雏型的工艺品。发展到如今，其种类具体多元化色彩。
+木雕艺术性强，它以浮雕技艺为主，设计上采取散点透视、鸟瞰式透视等构图，布局丰满，散而不松，多而不乱，层次分明，主题突出，故事情节性强，因而，深受收藏家喜爱。">
 
         </TextView>
 
@@ -76,9 +76,7 @@
             android:background="@drawable/mu" />
 
         <TextView
-            android:text="可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
-
-实践部分"
+            android:text="手串源于串珠与手镯的串饰品，今天已经演化为集装饰、把玩、鉴赏于一体的特色收藏品"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -91,9 +89,8 @@
             android:background="@drawable/muu" />
 
         <TextView
-            android:text="crollView用于设置垂直滚动条，HorizontalScrollView用于设置水平滚动条：需要注意的是，有一个属性是    scrollbars 可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
-
-实践部分"
+            android:text="  传统竹编工艺有着悠久的历史，富含着中华民族劳动人民辛勤劳作的结晶，竹编工艺品分为细丝工艺品和粗丝竹编工艺品。竹编所用竹丝断面全为矩形，在厚薄粗细上都有严格要求，厚度仅为一两根头发丝厚，宽度也只有四五根发丝宽，根根竹丝都通过匀刀，达到厚薄均匀，粗细一致，观者无不赞叹其难。传统竹编工艺有着悠久的历史，富含着劳动人民辛勤劳作的结晶，竹编工艺品分为细丝工艺品和粗丝竹编工艺品。在传统技艺街区展出了不同风格的竹编作品，既有历史悠久，技艺高超的青神竹编，又有将现代流行时尚与中国传统文化工艺相结合的刘氏竹氏竹编，博采众长。
+		当然，在中国的传统审美中，制作工艺与材质的关系，是有基本规律可循的，即高档材料使用高档工艺，而低档材料的工艺则相对简单。因此，作为一种高档的装饰品，中国古代的串饰很少选择抵挡材料，而收藏者的选择也大多集中在了精工细作的高级材料手串上。"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

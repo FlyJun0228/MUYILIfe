@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="10dp"
     tools:context=".Jingpin.Mu">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:weightSum="1">
         <FrameLayout
             android:padding="5dp"
@@ -22,6 +20,7 @@
                 android:layout_height="47dp"
                 android:src="@drawable/logo_muyi" />
         </FrameLayout>
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
@@ -33,7 +32,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-
                 android:textSize="18dp"
                 android:layout_weight="0.3"
                 android:textStyle="bold"
@@ -43,59 +41,27 @@
                 android:layout_height="match_parent"
                 />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/concer"
-                android:text="浏览商品"
-                android:textColor="#f9fafa"
-                android:textStyle="bold" />
         </LinearLayout>
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="crollView用于设置垂直滚动条，HorizontalScrollView用于设置水平滚动条：需要注意的是，有一个属性是    scrollbars 可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
-
-实践部分"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:text="木易生活体验馆位于长安街西延线国悦府，是公司融入Muyi life理念，提供亲身参与，亲身感悟的场馆。
+		场馆布置有大量的中国传统手工艺术精品，其中多为我国非物质文化遗产与国家级美术大师作品。多幅潮绣精品、陆光正木雕画、卢光华竹编作品、当代国画作品、各种精品檀木人物雕刻、大幅木雕屏风、全箱身雕刻樟木箱，完美的结合着红木家具布置。辅助以现代的科技手段，使体验者在浓重的文化氛围中观赏到木易生活带来的传统手工作品，同时有更加舒适的感受。
+		体验馆通过自身功能的完善，与合作单位定制式的服务，在满足体验者感受文化艺术氛围的同时，为体验者提供多样化生活服务。">
         </TextView>
+<ImageView
+
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:background="@drawable/lifee"/>
         <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:background="@drawable/lifeee"/>
 
-            android:layout_width="match_parent"
-            android:layout_height="192dp"
-            android:background="@drawable/mu"
-            />
-        <TextView
-            android:text="crollView用于设置垂直滚动条，HorizontalScrollView用于设置水平滚动条：需要注意的是，有一个属性是    scrollbars 可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
-
-实践部分"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </TextView>
-        <ImageView
-
-            android:layout_width="match_parent"
-            android:layout_height="192dp"
-            android:background="@drawable/muu"
-            />
-        <TextView
-            android:text="crollView用于设置垂直滚动条，HorizontalScrollView用于设置水平滚动条：需要注意的是，有一个属性是    scrollbars 可以设置滚动条的方向:但是ScrollView设置成horizontal是和设置成none是效果同，HorizontalScrollView设置成vertical和none的效果同。
-
-实践部分"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </TextView>
-        <ImageView
-
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/mu_3"
-            />
     </LinearLayout>
 
 </ScrollView>

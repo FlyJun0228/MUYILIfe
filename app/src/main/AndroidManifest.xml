@@ -34,17 +34,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Json.Json_mu"/>
-        <activity android:name=".Json.Json_xiang"/>
-        <activity android:name=".Json.Json_xiu"/>
+        <activity android:name=".Json.Json_mu" />
+        <activity android:name=".Json.Json_xiang" />
+        <activity android:name=".Json.Json_xiu" />
         <activity android:name=".Jingpin.Mu" />
         <activity android:name=".Jingpin.Xiang" />
         <activity android:name=".Jingpin.Xiu" />
         <activity android:name=".Jingpin.Life" />
         <activity android:name=".Map" />
-        <activity android:name=".Logo.Logo">
-
-        </activity>
+        <activity android:name=".Logo.Logo"></activity>
+        <activity android:name=".Vip"></activity>
     </application>
 
 </manifest>
