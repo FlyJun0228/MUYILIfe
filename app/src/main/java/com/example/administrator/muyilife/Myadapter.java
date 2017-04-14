@@ -33,7 +33,7 @@ public class Myadapter extends BaseAdapter{
         /*if (mList.size() % 2 == 0) {
             return mList.size() / 2;
         }*/
-        return mList.size() / 2 + 1;
+        return mList.size();
         //return mList.size();
     }
 

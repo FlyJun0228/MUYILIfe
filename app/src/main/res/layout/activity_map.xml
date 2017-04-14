@@ -78,7 +78,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textColor="#0e0e0e"
-                    android:text="北京市海淀区复兴路51号国悦府(联系电话：010—68151200"
+                    android:text="北京市海淀区复兴路51号国悦府(联系电话：010—68151200)"
                     android:textSize="16dp" />
             </TableLayout>
 
@@ -87,14 +87,15 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5">
-
-            <Button
-                android:id="@+id/aim"
-                android:layout_width="33dp"
-                android:layout_height="37dp"
+            android:layout_weight="4.5">
+            <ToggleButton
+                android:textOn="木易"
+                android:textOff="我"
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="@drawable/aim" />
+                />
         </FrameLayout>
     </LinearLayout>
 </LinearLayout>
