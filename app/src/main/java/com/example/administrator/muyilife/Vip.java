@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,35 +23,48 @@ import java.util.ArrayList;
 
 public class Vip extends AppCompatActivity {
 
-    Handler handler = null;
-    String wechat,number,name,jifen,Inten;
-    String url = "https://www.muyilife2016.com/wechat";
-    Bundle bundle = null;
-    private TextView textView,textView1,textView2,textView3;
+    private String intentData;      // 接收跳转传值
+
+    private TextView mName;         // 姓名
+    private TextView mWechat;       // 微信号
+    private TextView mPoint;        // 积分
+    private TextView mNumber;       // 会员卡号
+
+    private Handler handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vip);
-        Inten = this.getIntent().getStringExtra("wechat");
         initView();
-        Connection(url,"wechat");
-        handler =new Handler(){
-            public void handleMessage(Message msg){
-                    final ArrayList<String> list = msg.getData().getStringArrayList("new");
+        Connection();
 
-                    textView.setText(list.get(0));
-                    textView1.setText(list.get(1));
-                    textView2.setText(list.get(2));
-                    textView3.setText(list.get(3));
-
+        handler = new Handler() {
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        parseJson(msg.obj.toString());
+                        break;
+                    default:
+                        break;
+                }
             }
         };
     }
-    public void Connection(final String url,final String param) {
+
+    public void initView() {
+        intentData = this.getIntent().getStringExtra("wechat");
+        mName = (TextView) findViewById(R.id.tv_name);
+        mWechat = (TextView) findViewById(R.id.tv_wechat);
+        mPoint = (TextView) findViewById(R.id.tv_grade);
+        mNumber = (TextView) findViewById(R.id.number);
+    }
+
+    public void Connection() {
         new Thread() {
             public void run() {
                 try {
-                    String urlNameString = url +"?"+param+"="+ Inten;
+                    String urlNameString = "https://www.muyilife2016.com/wechat?wechat=" + intentData;
                     URL url = new URL(urlNameString);
                     final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
@@ -60,31 +75,11 @@ public class Vip extends AppCompatActivity {
                     while ((line = reader.readLine()) != null) {
                         respone.append(line);
                     }
-                    Json(respone.toString());
-                    ArrayList<String> ne = new ArrayList<String>();
-                    ne.add(name);
-                    ne.add(wechat);
-                    ne.add(jifen);
-                    ne.add(number);
-                    Message message = new Message();
-                    bundle = new Bundle();
-                    bundle.putStringArrayList("new",ne);
-                    message.setData(bundle);
-                    handler.sendMessage(message);
-                       /* runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                   Toast.makeText(MainActivity.this,reader.readLine(),Toast.LENGTH_SHORT).show();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });*/
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (ProtocolException e) {
-                    e.printStackTrace();
+                    Message msg = Message.obtain();
+                    msg.what = 0;
+                    msg.obj = respone.toString();
+                    handler.sendMessage(msg);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -92,24 +87,25 @@ public class Vip extends AppCompatActivity {
         }.start();
 
     }
-    public void Json(String jsondata) {
+
+    public void parseJson(String jsonData) {
         try {
-            JSONArray jsonArray = new JSONArray(jsondata);
+            JSONArray jsonArray = new JSONArray(jsonData);
+            if (jsonArray == null || jsonArray.length() != 1) {
+                Toast.makeText(getApplicationContext(), "小帅哥，该帐号不存在！", Toast.LENGTH_SHORT).show();
+                this.finish();
+                return;
+            }
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                name = jsonObject.getString("name");
-                number = jsonObject.getString("number");
-                jifen = jsonObject.getString("jifen");
-                wechat = jsonObject.getString("weichat");
+                mName.setText(jsonObject.getString("name"));
+                mNumber.setText(jsonObject.getString("number"));
+                mPoint.setText(jsonObject.getString("jifen"));
+                mWechat.setText(jsonObject.getString("weichat"));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-public void initView(){
-    textView = (TextView)findViewById(R.id.tv_name);
-    textView1 = (TextView)findViewById(R.id.tv_wechat);
-    textView2 = (TextView)findViewById(R.id.tv_grade);
-    textView3 = (TextView)findViewById(R.id.number);
-}
+
 }
