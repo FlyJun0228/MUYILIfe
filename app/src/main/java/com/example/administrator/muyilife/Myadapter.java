@@ -16,25 +16,20 @@ import java.util.List;
  */
 
 public class Myadapter extends BaseAdapter{
+
     private LayoutInflater layoutInflater;
-    //数据源与适配器进行关联
-    private List<ItemBean> mList;
+    private List<ItemBean> mList;                                                     //数据源与适配器进行关联
 
     public Myadapter(Context context, List<ItemBean> list, ListView listView) {
         mList = list;
-        layoutInflater = LayoutInflater.from(context);//context要使用当前adapter的界面对象layoutinflater（布局装载器对象）
+        layoutInflater = LayoutInflater.from(context);                                //context要使用当前adapter的界面对象layoutinflater（布局装载器对象）
     }
 
 
 
     @Override
     public int getCount() {
-
-        /*if (mList.size() % 2 == 0) {
-            return mList.size() / 2;
-        }*/
         return mList.size();
-        //return mList.size();
     }
 
     @Override
@@ -64,7 +59,7 @@ public class Myadapter extends BaseAdapter{
         return view;
         */
         //view为被实例化，缓存池中无缓存
-       /*   if (convertView == null){
+        /*   if (convertView == null){
             convertView = layoutInflater.inflate(R.layout.item,null);
         }
         ImageView imageView = (ImageView) convertView.findViewById(R.id.iv_image);

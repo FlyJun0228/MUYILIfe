@@ -25,8 +25,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Json_xiang extends AppCompatActivity {
+
     private ListView mListView;
-    String  urll = "https://www.muyilife2016.com/xiang";
+    private String  urll = "https://www.muyilife2016.com/xiang";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,7 +36,7 @@ public class Json_xiang extends AppCompatActivity {
         setContentView(R.layout.activity_json_xiang);
         mListView = (ListView) findViewById(R.id.lv_main);
         new NewsAsyncTask().execute(urll);
-       /* handler = new Handler() {
+        /* handler = new Handler() {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case SHOW:
@@ -47,16 +49,13 @@ public class Json_xiang extends AppCompatActivity {
             public void onClick(View v) {
                 //Connection();
                 Connection();
-
             }
         });*/
     }
-
     public void Connection() {
         new Thread() {
             public void run() {
                 try {
-
                     URL url = new URL(urll);
                     final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET");
@@ -68,12 +67,12 @@ public class Json_xiang extends AppCompatActivity {
                         respone.append(line);
                     }
                     Json(respone.toString());
-                 /*  Message message = Message.obtain();
+                    /*  Message message = Message.obtain();
                     message.what = SHOW;
                     a=respone.toString();
                     message.obj = respone.toString();
                     handler.sendMessage(message);*/
-                       /* runOnUiThread(new Runnable() {
+                    /* runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 try {
@@ -83,8 +82,6 @@ public class Json_xiang extends AppCompatActivity {
                                 }
                             }
                         });*/
-
-
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 } catch (ProtocolException e) {
@@ -94,11 +91,8 @@ public class Json_xiang extends AppCompatActivity {
                 }
             }
         }.start();
-
     }
-
     public List<ItemBean> Json(String jsondata) {
-
         List<ItemBean> itemBeanList = new ArrayList<ItemBean>();
         try {
             String jsonString = readStream(new URL(urll).openStream());
@@ -108,17 +102,14 @@ public class Json_xiang extends AppCompatActivity {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String   name = jsonObject.getString("name");
                 String  img = "http://www.muyilife2016.com/"+jsonObject.getString("img");
-               // String img = img1.replaceAll(" ", "");
+                // String img = img1.replaceAll(" ", "");
                 itemBean = new ItemBean(img, name);
                 itemBeanList.add(itemBean);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return itemBeanList;
-
     }
     private String readStream(InputStream is)
     {
@@ -139,8 +130,7 @@ public class Json_xiang extends AppCompatActivity {
         }
         return result;
     }
-    class NewsAsyncTask extends AsyncTask<String, Void, List<ItemBean>>
-    {
+    class NewsAsyncTask extends AsyncTask<String, Void, List<ItemBean>>  {
 
         @Override
         protected List<ItemBean> doInBackground(String... params) {
@@ -152,8 +142,6 @@ public class Json_xiang extends AppCompatActivity {
             super.onPostExecute(result);
             Myadapter adapter = new Myadapter(Json_xiang.this, result, mListView);
             mListView.setAdapter(adapter);
-
         }
-
     }
 }

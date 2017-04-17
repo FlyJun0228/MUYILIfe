@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.administrator.muyilife.Image;
 import com.example.administrator.muyilife.R;
-
+import com.example.administrator.muyilife.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,43 +20,34 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
-import java.util.ArrayList;
 
 
 public class Third extends Fragment {
 
+    private Handler handler;
     private TextView textView;
-    private   String news, news1, news2, news3, news4, news5, news6;
     private String urll = "https://www.muyilife2016.com/news";
     private ImageView imageView, imageView1,imageView2,imageView3,imageView4,imageView5;
-    private static final int SHOW =0;
-    private Handler handler;
-    Bundle bundle = null;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.activity_third, container, false);
         initView(view);
         Connection();
-
-        handler =new Handler(){
-            public void handleMessage(Message msg){
-                final ArrayList<String> list = msg.getData().getStringArrayList("new");
-                textView.setText(list.get(0));
-                new Image().ShowImage(imageView, list.get(1));
-                new Image().ShowImage(imageView1, list.get(2));
-                new Image().ShowImage(imageView2, list.get(3));
-                new Image().ShowImage(imageView3, list.get(4));
-                new Image().ShowImage(imageView4, list.get(5));
-                new Image().ShowImage(imageView5, list.get(6));
-
+        handler = new Handler() {
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        Json(msg.obj.toString());
+                        break;
+                    default:
+                        break;
+                }
             }
         };
         return view;
-
     }
     public void initView(View v){
         textView = (TextView)v.findViewById(R.id.tv_show);
@@ -82,38 +72,11 @@ public class Third extends Fragment {
                     while ((line = reader.readLine()) != null) {
                         respone.append(line);
                     }
-                    Json(respone.toString());
+                    Message msg = Message.obtain();
+                    msg.what = 0;
+                    msg.obj = respone.toString();
+                    handler.sendMessage(msg);
 
-
-                    // Json(respone.toString());
-                    ArrayList<String> ne = new ArrayList<String>();
-                    ne.add(news);
-                    ne.add(news1);
-                    ne.add(news2);
-                    ne.add(news3);
-                    ne.add(news4);
-                    ne.add(news5);
-                    ne.add(news6);
-                    Message message = new Message();
-                    bundle = new Bundle();
-                    bundle.putStringArrayList("new",ne);
-                    message.setData(bundle);
-                    handler.sendMessage(message);
-                    /* runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                   Toast.makeText(MainActivity.this,reader.readLine(),Toast.LENGTH_SHORT).show();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        });*/
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (ProtocolException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -125,13 +88,13 @@ public class Third extends Fragment {
             JSONArray jsonArray = new JSONArray(jsondata);
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                news = jsonObject.getString("news");
-                news1 = jsonObject.getString("news1");
-                news2 = jsonObject.getString("news2");
-                news3 = jsonObject.getString("news3");
-                news4 = jsonObject.getString("news4");
-                news5 = jsonObject.getString("news5");
-                news6 = jsonObject.getString("news6");
+                textView.setText(jsonObject.getString("news"));
+                new Image().ShowImage(imageView, jsonObject.getString("news1"));
+                new Image().ShowImage(imageView1, jsonObject.getString("news2"));
+                new Image().ShowImage(imageView2, jsonObject.getString("news3"));
+                new Image().ShowImage(imageView3, jsonObject.getString("news4"));
+                new Image().ShowImage(imageView4, jsonObject.getString("news5"));
+                new Image().ShowImage(imageView5, jsonObject.getString("news6"));
             }
         } catch (Exception e) {
             e.printStackTrace();

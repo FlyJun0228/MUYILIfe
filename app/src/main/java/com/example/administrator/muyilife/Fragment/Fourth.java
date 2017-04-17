@@ -20,11 +20,11 @@ import com.example.administrator.muyilife.Vip;
 
 public class Fourth extends Fragment  {
 
-
-    private ImageView imageView;
     private EditText editText;
     private CheckBox checkBox;
-
+    private ImageView imageView;
+    private SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

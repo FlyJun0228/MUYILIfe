@@ -10,7 +10,9 @@ import com.example.administrator.muyilife.Json.Json_mu;
 import com.example.administrator.muyilife.R;
 
 public class Mu extends AppCompatActivity implements View.OnClickListener{
+
  private Button mBtn_show;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +20,12 @@ public class Mu extends AppCompatActivity implements View.OnClickListener{
         initView();
         initListener();
     }
-    public void initView(){
+    public void initView() {
         mBtn_show = (Button)findViewById(R.id.button_mu);
     }
-public void initListener(){
-    mBtn_show.setOnClickListener(this);
-}
+    public void initListener() {
+        mBtn_show.setOnClickListener(this);
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()){

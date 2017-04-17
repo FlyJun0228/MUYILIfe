@@ -17,9 +17,9 @@ import com.example.administrator.muyilife.Jingpin.Xiu;
 public class Second extends Fragment implements View.OnClickListener {
 
     private ImageView mIVmu;
-    private ImageView mIVxiang;
     private ImageView mIVxiu;
     private ImageView mIvlife;
+    private ImageView mIVxiang;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

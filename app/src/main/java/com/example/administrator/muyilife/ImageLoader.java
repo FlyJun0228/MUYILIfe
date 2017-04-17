@@ -12,30 +12,30 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ImageLoader {
+
 	private ImageView mImageView;
-	private Handler handler = new Handler(){
+
+	private Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			mImageView.setImageBitmap((Bitmap) msg.obj);
 		}
 	};
-	public void showImageByThread(ImageView imageView, final String url)
-	{
+	public void showImageByThread(ImageView imageView, final String url) {
 		mImageView = imageView;
 		new Thread(){
 			@Override
 			public void run() {
 				super.run();
-		        Bitmap bitmap = getImage(url);
-	Message message = Message.obtain();
+				Bitmap bitmap = getImage(url);
+				Message message = Message.obtain();
 				message.obj = bitmap;
 				handler.sendMessage(message);
 			}
 		}.start();
 	}
-	public Bitmap getImage(String urlString)
-	{
+	public Bitmap getImage(String urlString) {
 		try{
 			HttpURLConnection connection = (HttpURLConnection) new URL(urlString).openConnection();
 			connection.setRequestMethod("GET");
@@ -47,6 +47,4 @@ public class ImageLoader {
 		}
 		return null;
 	}
-
-
 }

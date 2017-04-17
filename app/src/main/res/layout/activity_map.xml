@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,8 +17,7 @@
             android:id="@+id/back"
             android:background="@drawable/fanhui"
             android:layout_width="50dp"
-            android:layout_height="50dp"
-  />
+            android:layout_height="50dp" />
 
         <TextView
             android:background="#fafafa"
@@ -30,6 +28,7 @@
             android:layout_height="match_parent"
             android:text="位置信息"
             android:textSize="20dp" />
+
     </RelativeLayout>
 
     <com.baidu.mapapi.map.MapView
@@ -80,6 +79,7 @@
                     android:textColor="#0e0e0e"
                     android:text="北京市海淀区复兴路51号国悦府(联系电话：010—68151200)"
                     android:textSize="16dp" />
+
             </TableLayout>
 
         </LinearLayout>
@@ -88,14 +88,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4.5">
+
             <ToggleButton
                 android:textOn="木易"
                 android:textOff="我"
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                />
+                android:layout_gravity="center" />
+
         </FrameLayout>
+
     </LinearLayout>
+
 </LinearLayout>

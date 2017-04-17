@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".Jingpin.Mu">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="1">
+
         <FrameLayout
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="126dp"
                 android:layout_height="47dp"
                 android:src="@drawable/logo_muyi" />
+
         </FrameLayout>
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:background="@drawable/xiang_banner" />
+
         <LinearLayout
             android:padding="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
 
+            <TextView
                 android:textSize="18dp"
                 android:layout_weight="0.3"
                 android:textStyle="bold"
@@ -53,20 +58,21 @@
                 android:textColor="#f9fafa"
                 android:textStyle="bold" />
         </LinearLayout>
+
         <TextView
             android:padding="5dp"
             android:text="香文化是中华民族在长期的历史进程中，围绕各种香品的制作、炮制、配伍与使用而逐步形成的能够体现出中华民族的精神气质、民族传统、美学观念、价值观念、思维模式与世界观之独特性的一系列物品、技术、方法、习惯、制度与观念。香文化渗透在社香料的生产、炮制与配伍；香品的开发；香器（制香用的器物）与香具（用香时的工具）的制作与使用；香与宗教；香与各类文化艺术作品等等。
           沉香，被誉为“植物中的钻石”，它集天地之灵气，汇日月之精华，蒙岁月之积淀，以至极品沉香的价值可以达到黄金的三倍。可谓是“沉”得惊世，香”得骇俗，千百年来为世人所钟爱。"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </TextView>
-        <ImageView
 
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="192dp"
             android:background="@drawable/xiang"
             />
+
         <TextView
             android:text="沉香本身也是极其珍贵的药材，还可以用于制作香水。最昂贵的香水中，必定沉淀着数不清的沉香树的生命，像法国生产的名贵香水，大多数离不开沉香，它的含量很少，但不可或缺，起着稳定香味的作用。
      人类对香的喜好，乃是与生俱来的天性，有如蝶之恋花，木之向阳。
@@ -76,15 +82,15 @@
             android:layout_height="wrap_content">
 
         </TextView>
-        <ImageView
 
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="192dp"
             android:background="@drawable/xiangg"
             />
+
         <TextView
-            android:text=">中国香文化历经千年风雨，留给民族与历史的是一笔不可多得的财富。瞻念她在今日之气象，固然使人心生忧虑，但令人欣喜振奋的是，走过风云激荡的20世纪的中国人，正开始以更加清澈的目光审视传统文化的是非功过，对其精华灿烂报以更加睿智的热爱与珍惜；更有众多知香、好香、乐香的人们，兴味于传统文化的人们，共同关心着她的发展；而涉过千年之河的中国香文化，自当使人满怀信心，必能跨越一二波折，再次展示出迷人的光华。
- "
+            android:text=">中国香文化历经千年风雨，留给民族与历史的是一笔不可多得的财富。瞻念她在今日之气象，固然使人心生忧虑，但令人欣喜振奋的是，走过风云激荡的20世纪的中国人，正开始以更加清澈的目光审视传统文化的是非功过，对其精华灿烂报以更加睿智的热爱与珍惜；更有众多知香、好香、乐香的人们，兴味于传统文化的人们，共同关心着她的发展；而涉过千年之河的中国香文化，自当使人满怀信心，必能跨越一二波折，再次展示出迷人的光华。"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 

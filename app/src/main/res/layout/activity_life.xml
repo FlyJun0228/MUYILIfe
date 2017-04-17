@@ -5,20 +5,24 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".Jingpin.Mu">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1">
+
         <FrameLayout
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="126dp"
                 android:layout_height="47dp"
                 android:src="@drawable/logo_muyi" />
+
         </FrameLayout>
 
         <ImageView
@@ -26,11 +30,13 @@
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:background="@drawable/life_banner" />
+
         <LinearLayout
             android:padding="10dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:textSize="18dp"
                 android:layout_weight="0.3"
@@ -38,10 +44,10 @@
                 android:textColor="#863703"
                 android:text="木易生活-体验馆"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
@@ -49,13 +55,13 @@
             android:padding="5dp"
             android:text="木易生活体验馆位于长安街西延线国悦府，是公司融入Muyi life理念，提供亲身参与，亲身感悟的场馆。
 		场馆布置有大量的中国传统手工艺术精品，其中多为我国非物质文化遗产与国家级美术大师作品。多幅潮绣精品、陆光正木雕画、卢光华竹编作品、当代国画作品、各种精品檀木人物雕刻、大幅木雕屏风、全箱身雕刻樟木箱，完美的结合着红木家具布置。辅助以现代的科技手段，使体验者在浓重的文化氛围中观赏到木易生活带来的传统手工作品，同时有更加舒适的感受。
-		体验馆通过自身功能的完善，与合作单位定制式的服务，在满足体验者感受文化艺术氛围的同时，为体验者提供多样化生活服务。">
-        </TextView>
-<ImageView
+		体验馆通过自身功能的完善，与合作单位定制式的服务，在满足体验者感受文化艺术氛围的同时，为体验者提供多样化生活服务。"/>
 
-    android:layout_width="wrap_content"
-    android:layout_height="200dp"
-    android:background="@drawable/lifee"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/lifee"/>
+
         <ImageView
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"

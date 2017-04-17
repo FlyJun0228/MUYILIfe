@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,6 +23,7 @@
                 android:layout_width="126dp"
                 android:layout_height="47dp"
                 android:src="@drawable/logo_muyi" />
+
         </FrameLayout>
 
         <ImageView
@@ -39,7 +39,6 @@
             android:padding="10dp">
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.3"
@@ -57,6 +56,7 @@
                 android:text="浏览商品"
                 android:textColor="#f9fafa"
                 android:textStyle="bold" />
+
         </LinearLayout>
 
         <TextView
@@ -83,7 +83,6 @@
         </TextView>
 
         <ImageView
-
             android:layout_width="match_parent"
             android:layout_height="192dp"
             android:background="@drawable/xiuu" />
@@ -92,6 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="潮绣历史悠久，源于何时，说法不一，较为流行的说法是始于唐代。在唐代至五代十国期间，由于广州属于边疆地区未受到战乱的影响，刺绣与农业、手工业一样得到长足的发展，宋代至明代粤绣的技艺又有了进一步的提高。在清朝乾隆年间，广州已设立绣行，广州和潮州等地也广设绣庄、绣坊，粤绣呈现一派欣欣向荣的景象。乾隆年间，潮州西门外天地坛、布梳街以及开元寺附近，已有绣庄20多家，绣品输向新加坡、泰国、马来西亚一带，占领南洋市场，特别是带有民间浓厚地方特色的厅堂，佛庙摆设的绣品更是供不应求。可见潮绣在清代已经大规模出口，对国外市场有着极其重大的影响。19世纪英国艺术家波西尔所著《中国美术》中写道：“中国人长于刺绣花鸟，而广东人于此技术尤为专长……”潮绣多输入欧洲，可见当时中国潮绣欧洲也影响颇大。潮绣作为中国四大名绣之一的粤绣中的一大流派，以绣艺精美细致、构图均衡饱满、色彩亮丽又具立体感而别于其它绣种，在国内外享有盛誉。"/>
+
     </LinearLayout>
 
 </ScrollView>
